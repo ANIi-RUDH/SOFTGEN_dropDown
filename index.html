@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidenav" id="mySidenav" style="width: 280px; height: 800px;">
+  <a href="#contact">
+    <img src="./logo2.jpeg" alt="" style="margin-left: 100px; height: 50px; width: 50px;">
+  </a>
+  <br><br>
+  
+  <a href="#contact">Dashboard</a>
+  
+  <button class="dropdown-btn">Customer Management
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="navbar">
+    <h2>
+      <a href="#contact">
+        <img src="./Burger.png" alt="Logo" class="logo" onclick="toggleSidenav()">
+      </a>
+    </h2>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#news" class="nav-link">News</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Dropdown functionality
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+
+  // Toggle sidebar functionality
+  function toggleSidenav() {
+    const sidenav = document.getElementById("mySidenav");
+    
+    if (sidenav.style.width === "0px" || sidenav.style.width === "") {
+      sidenav.style.width = "280px";  // Open sidenav
+    } else {
+      sidenav.style.width = "0px";  // Close sidenav
+    }
+  }
+</script>
+
+</body>
+</html>
